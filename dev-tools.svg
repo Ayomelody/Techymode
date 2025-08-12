@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+<rect width="640" height="360" fill="#071228"/>
+<g transform="translate(50,30)">
+  <rect width="540" height="300" rx="16" fill="#0b2238"/>
+  <g fill="#06b7ff">
+    <rect x="40" y="40" width="200" height="160" rx="8"/>
+    <rect x="260" y="40" width="220" height="160" rx="8"/>
+  </g>
+  <text x="36" y="270" fill="#a6b8c8" font-size="20">Dev tools: faster builds, better DX</text>
+</g>
+</svg>

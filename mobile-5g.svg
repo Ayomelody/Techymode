@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+<rect width="640" height="360" fill="#071228"/>
+<g transform="translate(60,30)">
+  <rect width="520" height="300" rx="16" fill="#0b2238"/>
+  <g fill="#17f3b0">
+    <rect x="80" y="60" width="100" height="200" rx="18"/>
+    <circle cx="360" cy="120" r="60"/>
+    <path d="M320 200c40-40 80-60 120-40" stroke="#06b7ff" stroke-width="6" fill="none"/>
+  </g>
+  <text x="36" y="260" fill="#a6b8c8" font-size="20">Mobile & 5G: speed where it matters</text>
+</g>
+</svg>
