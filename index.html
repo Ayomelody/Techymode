@@ -1,68 +1,79 @@
-import zipfile
-from pathlib import Path
-import shutil
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Techymode - Latest Technology News and Updates">
+    <title>Techymode | Latest Tech News</title>
 
-# ----------------------------
-# CONFIGURATION
-# ----------------------------
-root = Path("/path/to/your/site")  # Change to your actual site folder
+    <!-- Favicon and Apple Touch Icon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo.png">
 
-# Local paths to your favicon and logo (source files)
-source_favicon = Path("/path/to/favicon.ico")  # Change this
-source_logo = Path("/path/to/logo.png")        # Change this
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-# Destination paths in the site
-assets_folder = root / "assets" / "images"
-favicon_dest = assets_folder / "favicon.ico"
-logo_dest = assets_folder / "logo.png"
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <h1 class="logo">Techymode</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-# HTML link tags
-favicon_link = '    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">\n'
-apple_icon_link = '    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/logo.png">\n'
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h2>Stay Ahead in Tech</h2>
+            <p>Breaking technology news, analysis, and insights from around the world.</p>
+            <a href="articles.html" class="btn">Explore Articles</a>
+        </div>
+    </header>
 
-# ----------------------------
-# 1. Ensure assets/images/ exists
-# ----------------------------
-assets_folder.mkdir(parents=True, exist_ok=True)
+    <!-- Featured Articles -->
+    <section class="featured">
+        <div class="container">
+            <h2>Latest Articles</h2>
+            <div class="articles-grid">
+                <article>
+                    <img src="assets/images/article1.jpg" alt="AI in 2025">
+                    <h3><a href="articles/article1.html">The Future of AI in 2025</a></h3>
+                    <p>Artificial Intelligence is evolving faster than ever. Here’s what to expect in the next few years...</p>
+                </article>
+                <article>
+                    <img src="assets/images/article2.jpg" alt="SpaceX Mars Mission">
+                    <h3><a href="articles/article2.html">SpaceX and the Mars Mission</a></h3>
+                    <p>How Elon Musk’s vision is pushing humanity closer to becoming a multi-planetary species...</p>
+                </article>
+                <article>
+                    <img src="assets/images/article3.jpg" alt="Quantum Computing">
+                    <h3><a href="articles/article3.html">Quantum Computing Breakthroughs</a></h3>
+                    <p>Why 2025 might be the year quantum computers finally enter mainstream applications...</p>
+                </article>
+            </div>
+        </div>
+    </section>
 
-# ----------------------------
-# 2. Copy favicon & logo if missing
-# ----------------------------
-if not favicon_dest.exists():
-    shutil.copy2(source_favicon, favicon_dest)
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Techymode. All rights reserved.</p>
+            <p>Follow us on:
+                <a href="#">Twitter</a> |
+                <a href="#">LinkedIn</a> |
+                <a href="#">YouTube</a>
+            </p>
+        </div>
+    </footer>
 
-if not logo_dest.exists():
-    shutil.copy2(source_logo, logo_dest)
-
-# ----------------------------
-# 3. Update all HTML files
-# ----------------------------
-for html_file in root.rglob("*.html"):
-    with open(html_file, "r", encoding="utf-8") as f:
-        lines = f.readlines()
-
-    # Skip if links already exist
-    file_content = "".join(lines)
-    if 'rel="icon"' in file_content and 'rel="apple-touch-icon"' in file_content:
-        continue
-
-    new_lines = []
-    for line in lines:
-        if "</head>" in line:
-            new_lines.append(favicon_link)
-            new_lines.append(apple_icon_link)
-        new_lines.append(line)
-
-    # Save the updated file
-    with open(html_file, "w", encoding="utf-8") as f:
-        f.writelines(new_lines)
-
-# ----------------------------
-# 4. Re-zip updated site
-# ----------------------------
-zip_path_favicon_update = "/mnt/data/techymode_site_with_favicon_links.zip"
-with zipfile.ZipFile(zip_path_favicon_update, "w", zipfile.ZIP_DEFLATED) as z:
-    for p in root.rglob("*"):
-        z.write(p, p.relative_to(root.parent))
-
-print(f"✅ Updated site zipped at: {zip_path_favicon_update}")
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
