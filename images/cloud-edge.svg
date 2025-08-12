@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+<rect width="640" height="360" fill="#071228"/>
+<g transform="translate(40,30)">
+  <rect width="560" height="300" rx="16" fill="#0b2238"/>
+  <g fill="#06b7ff" opacity="0.95">
+    <ellipse cx="200" cy="130" rx="120" ry="60"/>
+    <rect x="340" y="120" width="140" height="80" rx="10" />
+  </g>
+  <text x="36" y="260" fill="#a6b8c8" font-size="20">Cloud & edge: orchestration at scale</text>
+</g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+<rect width="640" height="360" fill="#071228"/>
+<g transform="translate(80,40)">
+  <rect rx="16" width="480" height="280" fill="#0b2238"/>
+  <g transform="translate(40,20)" fill="#17f3b0" opacity="0.95">
+    <circle cx="120" cy="70" r="60"/>
+    <rect x="200" y="40" width="12" height="120" rx="6"/>
+    <rect x="40" y="40" width="12" height="120" rx="6"/>
+    <g transform="translate(108,52)" fill="#071228">
+      <rect width="24" height="16" rx="6"/>
+      <rect y="28" width="24" height="16" rx="6"/>
+    </g>
+  </g>
+  <text x="28" y="250" fill="#a6b8c8" font-size="22" font-family="Arial">AI chip & neural compute — inside next-gen models</text>
+</g>
+</svg>
