@@ -1,7 +1,15 @@
+// ====== Mobile Menu Toggle ======
+document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.querySelector("nav ul");
+    const menuBtn = document.createElement("button");
 
-document.getElementById('nav-toggle')?.addEventListener('click', function(){
-  const nav = document.getElementById('main-nav');
-  if(!nav) return;
-  if(nav.style.display === 'flex'){ nav.style.display = ''; }
-  else{ nav.style.display = 'flex'; nav.style.flexDirection = 'column'; nav.style.gap='8px'; }
+    menuBtn.textContent = "☰ Menu";
+    menuBtn.classList.add("menu-btn");
+
+    // Insert menu button for mobile
+    document.querySelector("nav .container").insertBefore(menuBtn, nav);
+
+    menuBtn.addEventListener("click", () => {
+        nav.classList.toggle("show-menu");
+    });
 });
